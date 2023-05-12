@@ -13,10 +13,13 @@ body{
 }
 
 .password-container{
-  max-width: 450px;
-  max-height: 323px;
+  min-width: 550px;
+  min-height: 350px;
 }
 
+:root{
+  --bd-color: rgb(34, 34, 34); 
+}
 
 .passDisplayer {
   min-height: 34px;
@@ -26,6 +29,7 @@ body{
   overflow: hidden; 
   white-space: nowrap; 
   text-overflow: ellipsis; 
+  word-break: keep-all;
 }
 
 .controllers{
@@ -36,19 +40,27 @@ body{
 .output{
   overflow: hidden; 
   width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: white;
 }
 
-.fa-copy{
-  box-shadow: 0px 0px 15px 15px rgb(34, 34, 34);;
-}
 
 .passLength{
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 .passLength > input{
   margin-top: 3px; 
   margin-left: 5px; 
+}
+
+.Results{
+  border-radius: 20px ;
+
+  background-color: rgba(31, 28, 28, 0.886);
 }

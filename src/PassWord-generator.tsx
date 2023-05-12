@@ -10,7 +10,6 @@ const PasswordGenerator: React.FC = () => {
   const [includeSpecialLetters, setIncludeSpecialLetters] = useState<boolean>(true);
   const [generatedPassword, setGeneratedPassword] = useState<string>('');
 
-
   const generateLetters = useCallback(() => {
     let letters = '';
     for (let i = 97; i <= 122; i++) {
@@ -53,12 +52,12 @@ const PasswordGenerator: React.FC = () => {
   } 
 
   return (
+    <div className='Results'>
   <div className='container-fluid password-container p-4'>
     <div className="passDisplayer mb-4 d-flex justify-content-between align-items-center">
       <strong className='output'>{generatedPassword}</strong>
     <div className="controllers d-flex align-items-center">
       <button className="btn btn-secondary me-1 fa fa-copy" onClick={handelCopy}></button>
-      <button className="btn btn-secondary fa fa-rotate-right" onClick={generatePassCode}></button>
     </div>
   </div>
 
@@ -66,7 +65,7 @@ const PasswordGenerator: React.FC = () => {
 
     <div className="passLength">
       <label htmlFor="pass length">length</label>
-      <input type="range" value={passwordLength} min="8" max="100" onChange={(e) => setPasswordLength(Number(e.target.value))}/>
+      <input type="range" value={passwordLength} min="8" max="16" onChange={(e) => setPasswordLength(Number(e.target.value))}/>
       <span>{passwordLength}</span>
     </div>
 
@@ -80,6 +79,7 @@ const PasswordGenerator: React.FC = () => {
       </div>
     </div> 
     <button onClick={generatePassCode} className='passGenerator'>Generate Password</button>
+  </div>
   </div>
 
   );
